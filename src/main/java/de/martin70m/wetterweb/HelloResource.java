@@ -1,4 +1,4 @@
-package com.example.wetterweb;
+package de.martin70m.wetterweb;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
