@@ -7,15 +7,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.Serial;
 
 @WebServlet(urlPatterns="/app")
 public class WetterController extends HttpServlet {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String htmlOutput = "<html><h2>Hello! Welcome to Open Liberty</h2></html>";
-        response.getWriter().append(htmlOutput);
+
+        request.getRequestDispatcher("/WEB-INF/view/wetter.jsp")
+                .forward(request, response);
+
     }
 }
